@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<title>Programmer Develops</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: rgb(82, 78, 78);}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+.navlinks a:hover {
+  border-radius: 25%;
+  transition-duration: 1s
+}
+.container:hover .overlay {
+  transform: scale(0.5);
+}
+.link img:hover {
+  transform: scale(1.2,1.2);
+  box-shadow: 0 4px 8px 0 rgb(339, 0, 0);
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+  transition-duration: 1s;
+}
+.shake img:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+</style>
+<script>document.onkeydown = function(e)
+    {
+        if(event.keyCode == 123)
+        {
+            return false;
+        }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0))
+        {
+            return false;
+        }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0))
+        {
+            return false;
+        }
+        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))
+        {
+            return false;
+        }
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0))
+    {
+      return false;
+    }
+    }
+    // Get the current path.
+path = location.pathname; // window.location.pathname;
+
+// append with our juice
+window.history.pushState(null, null, path+"/fool")
+
+// or, as below
+window.history.pushState(null, null, path+"-fool")
+if ((e.which || e.keyCode) == 116 || ((e.ctrlKey || e.metaKey) && (e.which || e.keyCode) == 82) || (window.event.ctrlKey && e.keyCode == 82)) {
+  fetchPage(originalURL);
+  e.preventDefault();
+}
+
+jQuery.get( originalURL, function( data ) {
+  jQuery( "body" ).html( data );
+})
+
+path = location.pathname; // window.location.pathname;
+
+// append with our juice
+window.history.pushState(null, null, path+"/fool")
+
+// or, as below
+window.history.pushState(null, null, path+"-fool")
+window.history.pushState(null, null, "/user-login")
+window.history.pushState()
+</script>
+<body style="background-color: rgb(43, 46, 49); -webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;"oncontextmenu="return false">
+
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="navlinks w3-sidebar w3-bar-block w3-small w3-hide-small w3-center" style="flex-direction:row;border: solid; border-radius: 25%; border-color: white;">
+  <!-- Avatar image in top left corner -->
+  <img src="PDimage.png" style="width:100%">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black" style="background-color: black;">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p></p>
+  </a>
+  <br>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black w3-black" style="background-color: rgb(0, 0, 0);">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p></p>
+  </a>
+  <br>
+  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black w3-black" style="background-color: rgb(150, 90, 90);">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p></p>
+  </a>
+  <br>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black w3-black" style="background-color: rgb(150, 90, 90);">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p></p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="shake w3-container w3-padding-32 w3-center w3-black" id="home" style="border: solid; border-radius: 25%;">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Programmer Develops</h1>
+    <p>Fullstack Developer</p>
+    <img src="PDimage.png" alt="boy" class="w3-image" width="192" height="208">
+  </header>
+
+  <!-- About Section -->
+  <div class=" w3-content w3-justify w3-padding-64" style="color: rgb(254, 254, 254); font:bold; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; " id="about">
+    <h2 style="color: rgb(255, 255, 255); font:bold">Programmer Develops</h2>
+    <hr style="width:200px;" >
+    <p>I am Programmer Develops a guy who loves programming so much. I know app developent, game development and web development.  </p>
+    <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
+    <hr style="width:200px ;opacity:80%;">
+    <p class="w3-wide">Website</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:95%"></div>
+    </div>
+    <p class="w3-wide">App</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:85%"></div>
+    </div>
+    <p class="w3-wide">Game</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:80%"></div>
+    </div><br>
+    
+    <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">55+</span><br>
+        Projects Done
+      </div>
+
+    </div>
+
+    <!-- <button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <i class="fa fa-download"></i> Download Resume
+    </button>
+     -->
+    <!-- Grid for pricing tables -->
+    <h3 class="w3-padding-16 w3-text-light-grey">My Price</h3>
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half w3-margin-bottom">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic Website/App</li>
+          <li class="w3-padding-16">
+            <h2>$ 30</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="w3-half">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Pro Website/App</li>
+
+          <li class="w3-padding-16">
+            <h2>$ 55</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+        </ul>
+      </div>
+    <!-- End Grid/Pricing tables -->
+    </div>
+  </div>
+  
+  <!-- Portfolio Section -->
+  <div class=" w3-padding-64 w3-content" id="photos">
+    <h2 class="w3-text-light-grey">My Apps</h2>
+    <hr style="width:200px ;opacity:80%;">
+<div style="display:flex; ;">
+    <div class="link w3-row-padding" style="margin:0 -16px; padding-left: 4px;">
+      <a href="https://play.google.com/store/apps/details?id=appinventor.ai_pandyaamit72.Simple_Geometric_Calculator"> <img src="SGC-icon.png" width="200px" height="200px" style="border: solid ;border-radius: 5%; border-color: antiquewhite; background-color: bisque;"></a>
+    </div>
+    <div class="link w3-row-padding" style="margin:0 -16px">
+      <a href="https://play.google.com/store/apps/details?id=appinventor.ai_programmerdevelops.PaintPot"> <img src="SimplyDraw.png" width="200px" height="200px" style="border: solid ;border-radius: 5%; border-color: antiquewhite; background-color: bisque;"></a>
+    </div>
+    <div class="link w3-row-padding" style="margin:0 -16px">
+      <a href="https://play.google.com/store/apps/details?id=com.shantanupandya.snack8e335992ad604c788ba7614a2a364616"> <img src="TicTak.png" width="200px" height="200px" style="border: solid ;border-radius: 5%; border-color: antiquewhite; background-color: bisque;"></a>
+    </div>
+    <div class="link w3-row-padding" style="margin:0 -16px">
+      <a href="https://play.google.com/store/apps/details?id=com.shantanupandya.isstracker"> <img src="ISS.png" width="200px" height="200px" style="border: solid ;border-radius: 5%; border-color: antiquewhite; background-color: bisque;"></a>
+    </div>
+  </div>
+  <!-- End Portfolio Section -->
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section" style="color: rgb(255, 255, 255);">
+      <p><i class="fa fa-map-marker w3-xxlarge w3-margin-right" style="color: black;"></i> New Delhi, India</p>
+      <p><i class="fa fa-phone  w3-xxlarge w3-margin-right"></i> discord : Programmer Develops#8471</p>
+      <p><i class="fa fa-envelope  w3-xxlarge w3-margin-right"> </i> Email: programmerdevelops@gmail.com</p>
+    </div><br>
+
+
+  <!-- End Contact Section -->
+  </div>
+  
+    <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <a href="https://discord.gg/6DeUhPVnUM" style="background-color: rgb(0, 255, 21); color:black;text-decoration: overline; border: solid; border-radius: 20%;">DISCORD</a>
+  <!-- End footer -->
+  </footer>
+ 
+
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="donatePD" data-description="Support me on Buy me a coffee!" data-message="Hi There !!! Can you buy me a coffee ?" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script><!-- END PAGE CONTENT -->
+</div>
+<script type="text/javascript">
+  window.history.pushState(null, null, "/user-login")
+</script>
+
+</body>
+</html>
